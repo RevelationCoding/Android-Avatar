@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/RevelationCoding/Avatar-Generator-Android.svg)](https://jitpack.io/#RevelationCoding/Avatar-Generator-Android)
+[![](https://jitpack.io/v/RevelationCoding/Android-Avatar.svg)](https://jitpack.io/#RevelationCoding/Android-Avatar)
 
 # Avatar-Generator-Android
 
