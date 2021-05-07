@@ -1,0 +1,3 @@
+rootProject.name = "Android Avatar"
+include ':app'
+include ':mylibrary'

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="oval">
+
+            <!--    <solid-->
+            <!--        android:color="#000000"/>-->
+
+            <size
+                android:width="480dp"
+                android:height="480dp"/>
+
+            <corners android:radius="100dp"/>
+
+        </shape>
+    </item>
+<!--    <item-->
+<!--        android:id="@+id/ripple_item"-->
+<!--        android:drawable="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:height="@dimen/ripple_height"-->
+<!--        android:width="@dimen/ripple_width"-->
+<!--        android:gravity="center" />-->
+</layer-list>

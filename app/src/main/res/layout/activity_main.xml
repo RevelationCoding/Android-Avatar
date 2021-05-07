@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+    <com.example.mylibrary.AndroidAvatar
+        android:layout_marginTop="90dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:text="Ayush"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        app:backgroundWidth="400"
+        app:backgroundHeight="400"
+        app:textSize="56"
+        app:imageSrc="@drawable/avatar" />
+    <com.example.mylibrary.AndroidAvatar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:text="James"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:backgroundWidth="400"
+        app:backgroundHeight="400"
+        app:textSize="56"
+        app:imageSrc="@drawable/jordan" />
+
+    <com.example.mylibrary.AndroidAvatar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:text="Kirito"
+        android:id="@+id/avatarBack_random"
+        android:layout_centerHorizontal="true"
+        app:backgroundWidth="400"
+        app:backgroundHeight="400"
+        android:layout_alignParentBottom="true"
+        app:textSize="56"
+        app:randomColor="true"
+        app:backgroundColor="@color/Red"
+        android:layout_marginBottom="90dp"/>
+
+</RelativeLayout>
