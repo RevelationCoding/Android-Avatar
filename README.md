@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/RevelationCoding/Avatar-Generator-Android.svg)](https://jitpack.io/#RevelationCoding/Avatar-Generator-Android)
+[![](https://jitpack.io/v/RevelationCoding/Android-Avatar.svg)](https://jitpack.io/#RevelationCoding/Android-Avatar)
 
 # Avatar-Generator-Android
 
@@ -9,7 +9,7 @@ Generate first letter avatar Image like Google Contacts and random background.
 
 ## Preview
 
-<img src="https://github.com/RevelationCoding/Avatar-Generator-Android/blob/master/art/android_avatar.gif?raw=true" width="207px" height="500px"/>
+<img src="https://github.com/RevelationCoding/Android-Avatar/blob/master/art/android_avatar.gif?raw=true" width="207px" height="500px"/>
 
 ## Gradle Dependency
 
@@ -17,9 +17,9 @@ Generate first letter avatar Image like Google Contacts and random background.
 
 ```gradle
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
 		}
 	}
 ```
@@ -28,7 +28,7 @@ allprojects {
 
 ```gradle
 dependencies {
-	    implementation 'com.github.RevelationCoding:Avatar-Generator-Android:0.1.0'
+	        implementation 'com.github.RevelationCoding:Android-Avatar:Tag'
 	}
 ```
 
@@ -39,7 +39,7 @@ dependencies {
 ```xml
 
 <!--when random color is set true backgroundColor will be not set-->
-<com.revelationcoding.androidavatarlib.AndroidAvatarLib
+<com.RevelationCoding.mylibrary.AndroidAvatar
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_centerHorizontal="true"
