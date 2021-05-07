@@ -9,7 +9,7 @@ Generate first letter avatar Image like Google Contacts and random background.
 
 ## Preview
 
-<img src="https://github.com/RevelationCoding/Avatar-Generator-Android/blob/master/art/android_avatar.gif?raw=true" width="207px" height="500px"/>
+<img src="https://github.com/RevelationCoding/Android-Avatar/blob/master/art/android_avatar.gif?raw=true" width="207px" height="500px"/>
 
 ## Gradle Dependency
 
