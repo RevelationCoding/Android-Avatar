@@ -7,7 +7,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -20,6 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.os.HandlerCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
@@ -29,6 +33,8 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class AndroidAvatar extends RelativeLayout {
     String text;
@@ -119,7 +125,6 @@ public class AndroidAvatar extends RelativeLayout {
 
         ViewGroup.LayoutParams LLParams = LLRipple.getLayoutParams();
 
-
         if (text != null) {
             char nS = text.charAt(0);
             setChar(nS);
@@ -127,41 +132,55 @@ public class AndroidAvatar extends RelativeLayout {
         if (imageSrc != null) {
             setImageSrc(imageSrc, R.drawable.ic_error, ImageView.ScaleType.CENTER_CROP);
         }
+
+        //set ripple length here
         if (backgroundHeight > 0) {
-            LLParams.height = backgroundHeight;
+            LLParams.width = backgroundWidth-20;
+            LLParams.height = backgroundHeight-20;
             setBackgroundHeight(backgroundHeight);
         }
         if (backgroundWidth > 0) {
-            LLParams.width = backgroundWidth;
+            LLParams.width = backgroundWidth-20;
+            LLParams.height = backgroundHeight-20;
             setBackgroundWidth(backgroundWidth);
         }
         if (textSize > 0) {
             setTextSize(textSize);
         }
 
-        if (randomColor == true) {
+        if (randomColor != false) {
             setRandomColor();
         } else {
             setBackColor(backColor);
             setTextColor(textColor);
         }
-
-
         arr.recycle();
     }
 
+    /**
+     * @param  color an integer color
+     */
     public void setBackColor(int color) {
         imageView.setImageBitmap(getRoundedShape(color));
     }
 
+    /**
+     * @param  color an integer color
+     */
     public void setTextColor(int color) {
         textView.setTextColor(color);
     }
 
+    /**
+     * @param  c a single character
+     */
     public void setChar(char c) {
         textView.setText(String.valueOf(c));
     }
 
+    /**
+     * @param  size size of textview measured in DP accepts int
+     */
     public void setTextSize(int size) {
         textView.setTextSize(size);
     }
@@ -169,31 +188,49 @@ public class AndroidAvatar extends RelativeLayout {
 
     public void setRandomColor() {
         Random r = new Random();
-        int R = r.nextInt(70);
-        int G = r.nextInt(70);
-        int B = r.nextInt(70);
-        int color = Color.argb(75, R, G, B);
-        imageView.setImageBitmap(getRoundedShape(color));
+        int[] colorList = getResources().getIntArray(R.array.materialColor);
+//        int R = r.nextInt(70);
+//        int G = r.nextInt(70);
+//        int B = r.nextInt(70);
+//        int color = Color.argb(100, R, G, B);
+
+        imageView.setImageBitmap(getRoundedShape(colorList[r.nextInt(colorList.length)]));
         textView.setTextColor(Color.rgb(255, 255, 255));
     }
 
+
+    /**
+     * @param  height height of avatar
+     */
     public void setBackgroundHeight(int height) {
         ViewGroup.LayoutParams params = imageView.getLayoutParams();
         params.height = height;
         imageView.setLayoutParams(params);
     }
 
+    /**
+     * @param  width height of avatar
+     */
     public void setBackgroundWidth(int width) {
         ViewGroup.LayoutParams params = imageView.getLayoutParams();
         params.width = width;
         imageView.setLayoutParams(params);
     }
 
+    /**
+     * @param  string an string, accepts username and sets first word to textview
+     */
     public void setText(String string) {
         char nS = string.charAt(0);
         textView.setText(nS);
     }
 
+
+    /**
+     * @param  imageFile a Drawable/Local JPEG,PNG..
+     * @param  imageError Drawable Resource XML invoked on error
+     * @param  scaleType used for scaling the bounds of an image to the bounds of the image view
+     */
     public void setImageSrc(Drawable imageFile, int imageError, ImageView.ScaleType scaleType) {
         imageView.setScaleType(scaleType);
         Glide.with(mContext)
@@ -217,6 +254,11 @@ public class AndroidAvatar extends RelativeLayout {
                 .into(imageView);
     }
 
+    /**
+     * @param  imageUrl an absolute URL giving the base location of the image
+     * @param  imageError Drawable Resource XML invoked on error
+     * @param  scaleType used for scaling the bounds of an image to the bounds of the image view
+     */
     public void setImageUrl(String imageUrl, int imageError, ImageView.ScaleType scaleType) {
         imageView.setScaleType(scaleType);
         Glide.with(mContext).load(imageUrl).circleCrop().listener(new RequestListener<Drawable>() {
@@ -261,5 +303,6 @@ public class AndroidAvatar extends RelativeLayout {
                 new Rect(0, 0, targetWidth,
                         targetHeight), null);
         return targetBitmap;
+
     }
 }

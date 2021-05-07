@@ -23,4 +23,22 @@
     <color name="TextGrey">#b3b3b3</color>
     <color name="HintColor"> #FFFFFFFF</color>
     <color name="Red"> #d32f2f</color>
+    <color name="yellow">#FFDF00</color>
+    <color name="green">#41C300</color>
+    <color name="dark_purple">#3D5AFE</color>
+    <color name="light_blue">#4081EC</color>
+    <color name="white_transparent">#7EDFD8D8</color>
+
+    <array name="materialColor">
+        <item>@color/light_orange</item>
+        <item>@color/light_sky</item>
+        <item>@color/light_purple</item>
+        <item>@color/pink_red</item>
+        <item>@color/Red</item>
+        <item>@color/yellow</item>
+        <item>@color/light_dark_100</item>
+        <item>@color/green</item>
+        <item>@color/dark_purple</item>
+        <item>@color/light_blue</item>
+    </array>
 </resources>

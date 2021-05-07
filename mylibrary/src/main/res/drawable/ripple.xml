@@ -20,5 +20,5 @@
     <item
         android:id="@+id/ripple_item"
         android:drawable="?attr/selectableItemBackgroundBorderless"
-        android:gravity="center" />
+        android:gravity="center"/>
 </layer-list>

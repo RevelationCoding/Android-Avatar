@@ -23,9 +23,9 @@
         app:text="James"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:backgroundWidth="400"
-        app:backgroundHeight="400"
-        app:textSize="56"
+        app:backgroundWidth="220"
+        app:backgroundHeight="220"
+        app:textSize="26"
         app:imageSrc="@drawable/jordan" />
 
     <com.RevelationCoding.mylibrary.AndroidAvatar
