@@ -1,4 +1,4 @@
-package com.example.mylibrary;
+package com.RevelationCoding.mylibrary;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;

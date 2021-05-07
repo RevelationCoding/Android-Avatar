@@ -1,4 +1,4 @@
-package com.example.androidavatar;
+package com.RevelationCoding.androidavatar;
 
 import org.junit.Test;
 

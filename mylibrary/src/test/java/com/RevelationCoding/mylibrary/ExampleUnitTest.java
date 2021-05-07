@@ -1,4 +1,4 @@
-package com.example.mylibrary;
+package com.RevelationCoding.mylibrary;
 
 import org.junit.Test;
 

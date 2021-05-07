@@ -1,11 +1,11 @@
-package com.example.androidavatar;
+package com.RevelationCoding.androidavatar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.mylibrary.AndroidAvatar;
+import com.RevelationCoding.mylibrary.AndroidAvatar;
 
 public class MainActivity extends AppCompatActivity {
 

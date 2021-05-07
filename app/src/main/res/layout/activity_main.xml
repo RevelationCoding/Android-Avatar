@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/white">
-    <com.example.mylibrary.AndroidAvatar
+    <com.RevelationCoding.mylibrary.AndroidAvatar
         android:layout_marginTop="90dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:backgroundHeight="400"
         app:textSize="56"
         app:imageSrc="@drawable/avatar" />
-    <com.example.mylibrary.AndroidAvatar
+    <com.RevelationCoding.mylibrary.AndroidAvatar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:text="James"
@@ -28,7 +28,7 @@
         app:textSize="56"
         app:imageSrc="@drawable/jordan" />
 
-    <com.example.mylibrary.AndroidAvatar
+    <com.RevelationCoding.mylibrary.AndroidAvatar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:text="Kirito"
