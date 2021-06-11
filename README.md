@@ -39,7 +39,7 @@ dependencies {
 ```xml
 
 <!--when random color is set true backgroundColor will be not set-->
-<com.RevelationCoding.mylibrary.AndroidAvatar
+<com.amn-max.mylibrary.AndroidAvatar
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_centerHorizontal="true"
