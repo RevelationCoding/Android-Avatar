@@ -11,6 +11,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
+import android.graphics.Bitmap;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -232,6 +233,29 @@ public class AndroidAvatar extends RelativeLayout {
      * @param  scaleType used for scaling the bounds of an image to the bounds of the image view
      */
     public void setImageSrc(Drawable imageFile, int imageError, ImageView.ScaleType scaleType) {
+        imageView.setScaleType(scaleType);
+        Glide.with(mContext)
+                .load(imageFile)
+                .circleCrop()
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        progressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        progressBar.setVisibility(View.GONE);
+                        return false;
+                    }
+                })
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .error(imageError)
+                .into(imageView);
+    }
+    
+    public void setImageBitmap(Bitmap imageFile, int imageError, ImageView.ScaleType scaleType) {
         imageView.setScaleType(scaleType);
         Glide.with(mContext)
                 .load(imageFile)
